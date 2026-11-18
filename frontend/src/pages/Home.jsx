@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getFeaturedProducts } from '../services/api'
 import pro1Img from '../assets/pro1.jpg'
+import heroImage from '../assets/hero-image.jpg'
 
 const Home = () => {
 
@@ -33,8 +34,6 @@ const Home = () => {
 
     loadProducts()
   }, [])
-
- 
 
   const categories = [
     {
@@ -67,59 +66,58 @@ const Home = () => {
     <main className="bg-[#0B0C10] text-white">
 
       {/* HERO SECTION */}
-<section className="bg-[#0B0C10] text-white min-h-[85vh] flex items-center px-6 md:px-10 py-16 md:py-24">
-  <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-    
-    {/* LEFT: HERO TEXT */}
-    <div className="lg:col-span-7">
-      <p className="text-[#00F0FF] text-sm font-bold tracking-[5px] mb-6">
-        STYLE FOR EVERY YOU
-      </p>
+      <section className="bg-[#0B0C10] text-white min-h-[85vh] flex items-center px-6 md:px-10 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-      <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-white leading-[0.95] tracking-tight">
-        OWN YOUR SHIFT.
-        <span className="block text-[#00F0FF] mt-2">
-          STYLE FOR EVERY YOU.
-        </span>
-      </h1>
+          {/* LEFT: HERO TEXT */}
+          <div className="lg:col-span-7">
+            <p className="text-[#00F0FF] text-sm font-bold tracking-[5px] mb-6">
+              STYLE FOR EVERY YOU
+            </p>
 
-      <p className="text-gray-300 text-base md:text-lg leading-8 max-w-xl mt-8">
-        From the heart of Germiston to the streets everywhere. High-energy
-        caps, graphic drop hoodies, and everyday street fits built for bold
-        self-expression without breaking the bank.
-      </p>
+            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-white leading-[0.95] tracking-tight">
+              OWN YOUR SHIFT.
+              <span className="block text-[#00F0FF] mt-2">
+                STYLE FOR EVERY YOU.
+              </span>
+            </h1>
 
-      <div className="flex flex-wrap gap-4 mt-10">
-        <a
-          href="#featured-products"
-          className="bg-[#00F0FF] text-[#0B0C10] px-8 py-4 font-black text-xs tracking-widest hover:bg-white transition"
-        >
-          SHOP THE LATEST DROP
-        </a>
+            <p className="text-gray-300 text-base md:text-lg leading-8 max-w-xl mt-8">
+              From the heart of Germiston to the streets everywhere. High-energy
+              caps, graphic drop hoodies, and everyday street fits built for bold
+              self-expression without breaking the bank.
+            </p>
 
-        <a
-          href="#categories"
-          className="border border-white/40 text-white px-8 py-4 font-black text-xs tracking-widest hover:border-[#00F0FF] hover:text-[#00F0FF] transition"
-        >
-          EXPLORE HEADWEAR
-        </a>
-      </div>
-    </div>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a
+                href="#featured-products"
+                className="bg-[#00F0FF] text-[#0B0C10] px-8 py-4 font-black text-xs tracking-widest hover:bg-white transition"
+              >
+                SHOP THE LATEST DROP
+              </a>
 
-    {/* RIGHT: HERO IMAGE */}
-    <div className="lg:col-span-5">
-      <div className="overflow-hidden rounded-2xl border border-white/10">
-        <img
-  src="/src/assets/hero-image.jpg"
-  alt="Shiya Kulenga streetwear collection"
-  className="w-full h-auto object-contain sm:h-[450px] lg:h-[580px] sm:object-cover"
-/>
-      </div>
-    </div>
+              <a
+                href="#categories"
+                className="border border-white/40 text-white px-8 py-4 font-black text-xs tracking-widest hover:border-[#00F0FF] hover:text-[#00F0FF] transition"
+              >
+                EXPLORE HEADWEAR
+              </a>
+            </div>
+          </div>
 
-  </div>
-</section>
-      
+          {/* RIGHT: HERO IMAGE */}
+          <div className="lg:col-span-5">
+            <div className="overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src={heroImage}
+                alt="Shiya Kulenga streetwear collection"
+                className="w-full h-auto object-contain sm:h-[450px] lg:h-[580px] sm:object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       {/* OUR STORY SECTION */}
       <section className="py-24 px-6 md:px-10">
@@ -253,12 +251,12 @@ const Home = () => {
               </p>
             </div>
 
-           <Link
-  to="/shop"
-  className="text-[#00F0FF] text-xs font-black tracking-widest hover:text-white transition"
->
-  VIEW ALL PRODUCTS →
-</Link>
+            <Link
+              to="/shop"
+              className="text-[#00F0FF] text-xs font-black tracking-widest hover:text-white transition"
+            >
+              VIEW ALL PRODUCTS →
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
@@ -298,13 +296,11 @@ const Home = () => {
                   </span>
                 </div>
 
-               <div className="flex items-center justify-between mt-6 gap-3 p-5">
-  <span className="text-xl font-black">
-    R{Number(product.price).toFixed(2)}
-  </span>
-
- 
-</div>
+                <div className="flex items-center justify-between mt-6 gap-3 p-5">
+                  <span className="text-xl font-black">
+                    R{Number(product.price).toFixed(2)}
+                  </span>
+                </div>
               </div>
             ))}
 
